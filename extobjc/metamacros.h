@@ -34,7 +34,7 @@
 
 /**
  * Returns the Nth variadic argument (starting from zero). At least
- * N + 1 variadic arguments must be given. N must be between zero and twenty,
+ * N + 1 variadic arguments must be given. N must be between zero and fifty,
  * inclusive.
  */
 #define metamacro_at(N, ...) \
@@ -140,14 +140,14 @@
         metamacro_tail_(__VA_ARGS__)
 
 /**
- * Returns the first N (up to twenty) variadic arguments as a new argument list.
+ * Returns the first N (up to fifty) variadic arguments as a new argument list.
  * At least N variadic arguments must be provided.
  */
 #define metamacro_take(N, ...) \
         metamacro_concat(metamacro_take, N)(__VA_ARGS__)
 
 /**
- * Removes the first N (up to twenty) variadic arguments from the given argument
+ * Removes the first N (up to fifty) variadic arguments from the given argument
  * list. At least N variadic arguments must be provided.
  */
 #define metamacro_drop(N, ...) \
@@ -174,7 +174,7 @@
 /**
  * If A is equal to B, the next argument list is expanded; otherwise, the
  * argument list after that is expanded. A and B must be numbers between zero
- * and twenty, inclusive. Additionally, B must be greater than or equal to A.
+ * and fifty, inclusive. Additionally, B must be greater than or equal to A.
  *
  * @code
 
@@ -250,6 +250,36 @@ metamacro_if_eq(0, 1)(true)(false)
 #define metamacro_at18(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, ...) metamacro_head(__VA_ARGS__)
 #define metamacro_at19(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, ...) metamacro_head(__VA_ARGS__)
 #define metamacro_at20(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at21(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at22(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, _21, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at23(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, _21, _22, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at24(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, _21, _22, _23, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at25(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, _21, _22, _23, _24, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at26(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, _21, _22, _23, _24, _25, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at27(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, _21, _22, _23, _24, _25, _26, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at28(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, _21, _22, _23, _24, _25, _26, _27, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at29(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, _21, _22, _23, _24, _25, _26, _27, _28, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at30(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, _21, _22, _23, _24, _25, _26, _27, _28, _29, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at31(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, _21, _22, _23, _24, _25, _26, _27, _28, _29, _30, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at32(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, _21, _22, _23, _24, _25, _26, _27, _28, _29, _30, _31, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at33(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, _21, _22, _23, _24, _25, _26, _27, _28, _29, _30, _31, _32, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at34(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, _21, _22, _23, _24, _25, _26, _27, _28, _29, _30, _31, _32, _33, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at35(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, _21, _22, _23, _24, _25, _26, _27, _28, _29, _30, _31, _32, _33, _34, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at36(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, _21, _22, _23, _24, _25, _26, _27, _28, _29, _30, _31, _32, _33, _34, _35, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at37(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, _21, _22, _23, _24, _25, _26, _27, _28, _29, _30, _31, _32, _33, _34, _35, _36, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at38(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, _21, _22, _23, _24, _25, _26, _27, _28, _29, _30, _31, _32, _33, _34, _35, _36, _37, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at39(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, _21, _22, _23, _24, _25, _26, _27, _28, _29, _30, _31, _32, _33, _34, _35, _36, _37, _38, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at40(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, _21, _22, _23, _24, _25, _26, _27, _28, _29, _30, _31, _32, _33, _34, _35, _36, _37, _38, _39, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at41(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, _21, _22, _23, _24, _25, _26, _27, _28, _29, _30, _31, _32, _33, _34, _35, _36, _37, _38, _39, _40, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at42(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, _21, _22, _23, _24, _25, _26, _27, _28, _29, _30, _31, _32, _33, _34, _35, _36, _37, _38, _39, _40, _41, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at43(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, _21, _22, _23, _24, _25, _26, _27, _28, _29, _30, _31, _32, _33, _34, _35, _36, _37, _38, _39, _40, _41, _42, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at44(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, _21, _22, _23, _24, _25, _26, _27, _28, _29, _30, _31, _32, _33, _34, _35, _36, _37, _38, _39, _40, _41, _42, _43, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at45(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, _21, _22, _23, _24, _25, _26, _27, _28, _29, _30, _31, _32, _33, _34, _35, _36, _37, _38, _39, _40, _41, _42, _43, _44, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at46(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, _21, _22, _23, _24, _25, _26, _27, _28, _29, _30, _31, _32, _33, _34, _35, _36, _37, _38, _39, _40, _41, _42, _43, _44, _45, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at47(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, _21, _22, _23, _24, _25, _26, _27, _28, _29, _30, _31, _32, _33, _34, _35, _36, _37, _38, _39, _40, _41, _42, _43, _44, _45, _46, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at48(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, _21, _22, _23, _24, _25, _26, _27, _28, _29, _30, _31, _32, _33, _34, _35, _36, _37, _38, _39, _40, _41, _42, _43, _44, _45, _46, _47, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at49(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, _21, _22, _23, _24, _25, _26, _27, _28, _29, _30, _31, _32, _33, _34, _35, _36, _37, _38, _39, _40, _41, _42, _43, _44, _45, _46, _47, _48, ...) metamacro_head(__VA_ARGS__)
+#define metamacro_at50(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, _21, _22, _23, _24, _25, _26, _27, _28, _29, _30, _31, _32, _33, _34, _35, _36, _37, _38, _39, _40, _41, _42, _43, _44, _45, _46, _47, _48, _49, ...) metamacro_head(__VA_ARGS__)
 
 // metamacro_foreach_cxt expansions
 #define metamacro_foreach_cxt0(MACRO, SEP, CONTEXT)
@@ -1248,6 +1278,156 @@ metamacro_if_eq(0, 1)(true)(false)
     SEP \
     MACRO(19, CONTEXT)
 
+#define metamacro_for_cxt21(MACRO, SEP, CONTEXT) \
+    metamacro_for_cxt20(MACRO, SEP, CONTEXT) \
+    SEP \
+    MACRO(20, CONTEXT)
+
+#define metamacro_for_cxt22(MACRO, SEP, CONTEXT) \
+    metamacro_for_cxt21(MACRO, SEP, CONTEXT) \
+    SEP \
+    MACRO(21, CONTEXT)
+
+#define metamacro_for_cxt23(MACRO, SEP, CONTEXT) \
+    metamacro_for_cxt22(MACRO, SEP, CONTEXT) \
+    SEP \
+    MACRO(22, CONTEXT)
+
+#define metamacro_for_cxt24(MACRO, SEP, CONTEXT) \
+    metamacro_for_cxt23(MACRO, SEP, CONTEXT) \
+    SEP \
+    MACRO(23, CONTEXT)
+
+#define metamacro_for_cxt25(MACRO, SEP, CONTEXT) \
+    metamacro_for_cxt24(MACRO, SEP, CONTEXT) \
+    SEP \
+    MACRO(24, CONTEXT)
+
+#define metamacro_for_cxt26(MACRO, SEP, CONTEXT) \
+    metamacro_for_cxt25(MACRO, SEP, CONTEXT) \
+    SEP \
+    MACRO(25, CONTEXT)
+
+#define metamacro_for_cxt27(MACRO, SEP, CONTEXT) \
+    metamacro_for_cxt26(MACRO, SEP, CONTEXT) \
+    SEP \
+    MACRO(26, CONTEXT)
+
+#define metamacro_for_cxt28(MACRO, SEP, CONTEXT) \
+    metamacro_for_cxt27(MACRO, SEP, CONTEXT) \
+    SEP \
+    MACRO(27, CONTEXT)
+
+#define metamacro_for_cxt29(MACRO, SEP, CONTEXT) \
+    metamacro_for_cxt28(MACRO, SEP, CONTEXT) \
+    SEP \
+    MACRO(28, CONTEXT)
+
+#define metamacro_for_cxt30(MACRO, SEP, CONTEXT) \
+    metamacro_for_cxt29(MACRO, SEP, CONTEXT) \
+    SEP \
+    MACRO(29, CONTEXT)
+
+#define metamacro_for_cxt31(MACRO, SEP, CONTEXT) \
+    metamacro_for_cxt30(MACRO, SEP, CONTEXT) \
+    SEP \
+    MACRO(30, CONTEXT)
+
+#define metamacro_for_cxt32(MACRO, SEP, CONTEXT) \
+    metamacro_for_cxt31(MACRO, SEP, CONTEXT) \
+    SEP \
+    MACRO(31, CONTEXT)
+
+#define metamacro_for_cxt33(MACRO, SEP, CONTEXT) \
+    metamacro_for_cxt32(MACRO, SEP, CONTEXT) \
+    SEP \
+    MACRO(32, CONTEXT)
+
+#define metamacro_for_cxt34(MACRO, SEP, CONTEXT) \
+    metamacro_for_cxt33(MACRO, SEP, CONTEXT) \
+    SEP \
+    MACRO(33, CONTEXT)
+
+#define metamacro_for_cxt35(MACRO, SEP, CONTEXT) \
+    metamacro_for_cxt34(MACRO, SEP, CONTEXT) \
+    SEP \
+    MACRO(34, CONTEXT)
+
+#define metamacro_for_cxt36(MACRO, SEP, CONTEXT) \
+    metamacro_for_cxt35(MACRO, SEP, CONTEXT) \
+    SEP \
+    MACRO(35, CONTEXT)
+
+#define metamacro_for_cxt37(MACRO, SEP, CONTEXT) \
+    metamacro_for_cxt36(MACRO, SEP, CONTEXT) \
+    SEP \
+    MACRO(36, CONTEXT)
+
+#define metamacro_for_cxt38(MACRO, SEP, CONTEXT) \
+    metamacro_for_cxt37(MACRO, SEP, CONTEXT) \
+    SEP \
+    MACRO(37, CONTEXT)
+
+#define metamacro_for_cxt39(MACRO, SEP, CONTEXT) \
+    metamacro_for_cxt38(MACRO, SEP, CONTEXT) \
+    SEP \
+    MACRO(38, CONTEXT)
+
+#define metamacro_for_cxt40(MACRO, SEP, CONTEXT) \
+    metamacro_for_cxt39(MACRO, SEP, CONTEXT) \
+    SEP \
+    MACRO(39, CONTEXT)
+
+#define metamacro_for_cxt41(MACRO, SEP, CONTEXT) \
+    metamacro_for_cxt40(MACRO, SEP, CONTEXT) \
+    SEP \
+    MACRO(40, CONTEXT)
+
+#define metamacro_for_cxt42(MACRO, SEP, CONTEXT) \
+    metamacro_for_cxt41(MACRO, SEP, CONTEXT) \
+    SEP \
+    MACRO(41, CONTEXT)
+
+#define metamacro_for_cxt43(MACRO, SEP, CONTEXT) \
+    metamacro_for_cxt42(MACRO, SEP, CONTEXT) \
+    SEP \
+    MACRO(42, CONTEXT)
+
+#define metamacro_for_cxt44(MACRO, SEP, CONTEXT) \
+    metamacro_for_cxt43(MACRO, SEP, CONTEXT) \
+    SEP \
+    MACRO(43, CONTEXT)
+
+#define metamacro_for_cxt45(MACRO, SEP, CONTEXT) \
+    metamacro_for_cxt44(MACRO, SEP, CONTEXT) \
+    SEP \
+    MACRO(44, CONTEXT)
+
+#define metamacro_for_cxt46(MACRO, SEP, CONTEXT) \
+    metamacro_for_cxt45(MACRO, SEP, CONTEXT) \
+    SEP \
+    MACRO(45, CONTEXT)
+
+#define metamacro_for_cxt47(MACRO, SEP, CONTEXT) \
+    metamacro_for_cxt46(MACRO, SEP, CONTEXT) \
+    SEP \
+    MACRO(46, CONTEXT)
+
+#define metamacro_for_cxt48(MACRO, SEP, CONTEXT) \
+    metamacro_for_cxt47(MACRO, SEP, CONTEXT) \
+    SEP \
+    MACRO(47, CONTEXT)
+
+#define metamacro_for_cxt49(MACRO, SEP, CONTEXT) \
+    metamacro_for_cxt48(MACRO, SEP, CONTEXT) \
+    SEP \
+    MACRO(48, CONTEXT)
+
+#define metamacro_for_cxt50(MACRO, SEP, CONTEXT) \
+    metamacro_for_cxt49(MACRO, SEP, CONTEXT) \
+    SEP \
+    MACRO(49, CONTEXT)
+
 // metamacro_if_eq expansions
 #define metamacro_if_eq0(VALUE) \
     metamacro_concat(metamacro_if_eq0_, VALUE)
@@ -1273,6 +1453,36 @@ metamacro_if_eq(0, 1)(true)(false)
 #define metamacro_if_eq0_18(...) metamacro_expand_
 #define metamacro_if_eq0_19(...) metamacro_expand_
 #define metamacro_if_eq0_20(...) metamacro_expand_
+#define metamacro_if_eq0_21(...) metamacro_expand_
+#define metamacro_if_eq0_22(...) metamacro_expand_
+#define metamacro_if_eq0_23(...) metamacro_expand_
+#define metamacro_if_eq0_24(...) metamacro_expand_
+#define metamacro_if_eq0_25(...) metamacro_expand_
+#define metamacro_if_eq0_26(...) metamacro_expand_
+#define metamacro_if_eq0_27(...) metamacro_expand_
+#define metamacro_if_eq0_28(...) metamacro_expand_
+#define metamacro_if_eq0_29(...) metamacro_expand_
+#define metamacro_if_eq0_30(...) metamacro_expand_
+#define metamacro_if_eq0_31(...) metamacro_expand_
+#define metamacro_if_eq0_32(...) metamacro_expand_
+#define metamacro_if_eq0_33(...) metamacro_expand_
+#define metamacro_if_eq0_34(...) metamacro_expand_
+#define metamacro_if_eq0_35(...) metamacro_expand_
+#define metamacro_if_eq0_36(...) metamacro_expand_
+#define metamacro_if_eq0_37(...) metamacro_expand_
+#define metamacro_if_eq0_38(...) metamacro_expand_
+#define metamacro_if_eq0_39(...) metamacro_expand_
+#define metamacro_if_eq0_40(...) metamacro_expand_
+#define metamacro_if_eq0_41(...) metamacro_expand_
+#define metamacro_if_eq0_42(...) metamacro_expand_
+#define metamacro_if_eq0_43(...) metamacro_expand_
+#define metamacro_if_eq0_44(...) metamacro_expand_
+#define metamacro_if_eq0_45(...) metamacro_expand_
+#define metamacro_if_eq0_46(...) metamacro_expand_
+#define metamacro_if_eq0_47(...) metamacro_expand_
+#define metamacro_if_eq0_48(...) metamacro_expand_
+#define metamacro_if_eq0_49(...) metamacro_expand_
+#define metamacro_if_eq0_50(...) metamacro_expand_
 
 #define metamacro_if_eq1(VALUE) metamacro_if_eq0(metamacro_dec(VALUE))
 #define metamacro_if_eq2(VALUE) metamacro_if_eq1(metamacro_dec(VALUE))
@@ -1294,6 +1504,36 @@ metamacro_if_eq(0, 1)(true)(false)
 #define metamacro_if_eq18(VALUE) metamacro_if_eq17(metamacro_dec(VALUE))
 #define metamacro_if_eq19(VALUE) metamacro_if_eq18(metamacro_dec(VALUE))
 #define metamacro_if_eq20(VALUE) metamacro_if_eq19(metamacro_dec(VALUE))
+#define metamacro_if_eq21(VALUE) metamacro_if_eq20(metamacro_dec(VALUE))
+#define metamacro_if_eq22(VALUE) metamacro_if_eq21(metamacro_dec(VALUE))
+#define metamacro_if_eq23(VALUE) metamacro_if_eq22(metamacro_dec(VALUE))
+#define metamacro_if_eq24(VALUE) metamacro_if_eq23(metamacro_dec(VALUE))
+#define metamacro_if_eq25(VALUE) metamacro_if_eq24(metamacro_dec(VALUE))
+#define metamacro_if_eq26(VALUE) metamacro_if_eq25(metamacro_dec(VALUE))
+#define metamacro_if_eq27(VALUE) metamacro_if_eq26(metamacro_dec(VALUE))
+#define metamacro_if_eq28(VALUE) metamacro_if_eq27(metamacro_dec(VALUE))
+#define metamacro_if_eq29(VALUE) metamacro_if_eq28(metamacro_dec(VALUE))
+#define metamacro_if_eq30(VALUE) metamacro_if_eq29(metamacro_dec(VALUE))
+#define metamacro_if_eq31(VALUE) metamacro_if_eq30(metamacro_dec(VALUE))
+#define metamacro_if_eq32(VALUE) metamacro_if_eq31(metamacro_dec(VALUE))
+#define metamacro_if_eq33(VALUE) metamacro_if_eq32(metamacro_dec(VALUE))
+#define metamacro_if_eq34(VALUE) metamacro_if_eq33(metamacro_dec(VALUE))
+#define metamacro_if_eq35(VALUE) metamacro_if_eq34(metamacro_dec(VALUE))
+#define metamacro_if_eq36(VALUE) metamacro_if_eq35(metamacro_dec(VALUE))
+#define metamacro_if_eq37(VALUE) metamacro_if_eq36(metamacro_dec(VALUE))
+#define metamacro_if_eq38(VALUE) metamacro_if_eq37(metamacro_dec(VALUE))
+#define metamacro_if_eq39(VALUE) metamacro_if_eq38(metamacro_dec(VALUE))
+#define metamacro_if_eq40(VALUE) metamacro_if_eq39(metamacro_dec(VALUE))
+#define metamacro_if_eq41(VALUE) metamacro_if_eq40(metamacro_dec(VALUE))
+#define metamacro_if_eq42(VALUE) metamacro_if_eq41(metamacro_dec(VALUE))
+#define metamacro_if_eq43(VALUE) metamacro_if_eq42(metamacro_dec(VALUE))
+#define metamacro_if_eq44(VALUE) metamacro_if_eq43(metamacro_dec(VALUE))
+#define metamacro_if_eq45(VALUE) metamacro_if_eq44(metamacro_dec(VALUE))
+#define metamacro_if_eq46(VALUE) metamacro_if_eq45(metamacro_dec(VALUE))
+#define metamacro_if_eq47(VALUE) metamacro_if_eq46(metamacro_dec(VALUE))
+#define metamacro_if_eq48(VALUE) metamacro_if_eq47(metamacro_dec(VALUE))
+#define metamacro_if_eq49(VALUE) metamacro_if_eq48(metamacro_dec(VALUE))
+#define metamacro_if_eq50(VALUE) metamacro_if_eq49(metamacro_dec(VALUE))		
 
 // metamacro_if_eq_recursive expansions
 #define metamacro_if_eq_recursive0(VALUE) \
@@ -1320,6 +1560,36 @@ metamacro_if_eq(0, 1)(true)(false)
 #define metamacro_if_eq_recursive0_18(...) metamacro_expand_
 #define metamacro_if_eq_recursive0_19(...) metamacro_expand_
 #define metamacro_if_eq_recursive0_20(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_21(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_22(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_23(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_24(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_25(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_26(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_27(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_28(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_29(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_30(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_31(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_32(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_33(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_34(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_35(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_36(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_37(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_38(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_39(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_40(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_41(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_42(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_43(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_44(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_45(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_46(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_47(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_48(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_49(...) metamacro_expand_
+#define metamacro_if_eq_recursive0_50(...) metamacro_expand_
 
 #define metamacro_if_eq_recursive1(VALUE) metamacro_if_eq_recursive0(metamacro_dec(VALUE))
 #define metamacro_if_eq_recursive2(VALUE) metamacro_if_eq_recursive1(metamacro_dec(VALUE))
@@ -1341,6 +1611,36 @@ metamacro_if_eq(0, 1)(true)(false)
 #define metamacro_if_eq_recursive18(VALUE) metamacro_if_eq_recursive17(metamacro_dec(VALUE))
 #define metamacro_if_eq_recursive19(VALUE) metamacro_if_eq_recursive18(metamacro_dec(VALUE))
 #define metamacro_if_eq_recursive20(VALUE) metamacro_if_eq_recursive19(metamacro_dec(VALUE))
+#define metamacro_if_eq_recursive21(VALUE) metamacro_if_eq_recursive20(metamacro_dec(VALUE))
+#define metamacro_if_eq_recursive22(VALUE) metamacro_if_eq_recursive21(metamacro_dec(VALUE))
+#define metamacro_if_eq_recursive23(VALUE) metamacro_if_eq_recursive22(metamacro_dec(VALUE))
+#define metamacro_if_eq_recursive24(VALUE) metamacro_if_eq_recursive23(metamacro_dec(VALUE))
+#define metamacro_if_eq_recursive25(VALUE) metamacro_if_eq_recursive24(metamacro_dec(VALUE))
+#define metamacro_if_eq_recursive26(VALUE) metamacro_if_eq_recursive25(metamacro_dec(VALUE))
+#define metamacro_if_eq_recursive27(VALUE) metamacro_if_eq_recursive26(metamacro_dec(VALUE))
+#define metamacro_if_eq_recursive28(VALUE) metamacro_if_eq_recursive27(metamacro_dec(VALUE))
+#define metamacro_if_eq_recursive29(VALUE) metamacro_if_eq_recursive28(metamacro_dec(VALUE))
+#define metamacro_if_eq_recursive30(VALUE) metamacro_if_eq_recursive29(metamacro_dec(VALUE))
+#define metamacro_if_eq_recursive31(VALUE) metamacro_if_eq_recursive30(metamacro_dec(VALUE))
+#define metamacro_if_eq_recursive32(VALUE) metamacro_if_eq_recursive31(metamacro_dec(VALUE))
+#define metamacro_if_eq_recursive33(VALUE) metamacro_if_eq_recursive32(metamacro_dec(VALUE))
+#define metamacro_if_eq_recursive34(VALUE) metamacro_if_eq_recursive33(metamacro_dec(VALUE))
+#define metamacro_if_eq_recursive35(VALUE) metamacro_if_eq_recursive34(metamacro_dec(VALUE))
+#define metamacro_if_eq_recursive36(VALUE) metamacro_if_eq_recursive35(metamacro_dec(VALUE))
+#define metamacro_if_eq_recursive37(VALUE) metamacro_if_eq_recursive36(metamacro_dec(VALUE))
+#define metamacro_if_eq_recursive38(VALUE) metamacro_if_eq_recursive37(metamacro_dec(VALUE))
+#define metamacro_if_eq_recursive39(VALUE) metamacro_if_eq_recursive38(metamacro_dec(VALUE))
+#define metamacro_if_eq_recursive40(VALUE) metamacro_if_eq_recursive39(metamacro_dec(VALUE))
+#define metamacro_if_eq_recursive41(VALUE) metamacro_if_eq_recursive40(metamacro_dec(VALUE))
+#define metamacro_if_eq_recursive42(VALUE) metamacro_if_eq_recursive41(metamacro_dec(VALUE))
+#define metamacro_if_eq_recursive43(VALUE) metamacro_if_eq_recursive42(metamacro_dec(VALUE))
+#define metamacro_if_eq_recursive44(VALUE) metamacro_if_eq_recursive43(metamacro_dec(VALUE))
+#define metamacro_if_eq_recursive45(VALUE) metamacro_if_eq_recursive44(metamacro_dec(VALUE))
+#define metamacro_if_eq_recursive46(VALUE) metamacro_if_eq_recursive45(metamacro_dec(VALUE))
+#define metamacro_if_eq_recursive47(VALUE) metamacro_if_eq_recursive46(metamacro_dec(VALUE))
+#define metamacro_if_eq_recursive48(VALUE) metamacro_if_eq_recursive47(metamacro_dec(VALUE))
+#define metamacro_if_eq_recursive49(VALUE) metamacro_if_eq_recursive48(metamacro_dec(VALUE))
+#define metamacro_if_eq_recursive50(VALUE) metamacro_if_eq_recursive49(metamacro_dec(VALUE))
 
 // metamacro_take expansions
 #define metamacro_take0(...)
@@ -1364,6 +1664,36 @@ metamacro_if_eq(0, 1)(true)(false)
 #define metamacro_take18(...) metamacro_head(__VA_ARGS__), metamacro_take17(metamacro_tail(__VA_ARGS__))
 #define metamacro_take19(...) metamacro_head(__VA_ARGS__), metamacro_take18(metamacro_tail(__VA_ARGS__))
 #define metamacro_take20(...) metamacro_head(__VA_ARGS__), metamacro_take19(metamacro_tail(__VA_ARGS__))
+#define metamacro_take21(...) metamacro_head(__VA_ARGS__), metamacro_take20(metamacro_tail(__VA_ARGS__))
+#define metamacro_take22(...) metamacro_head(__VA_ARGS__), metamacro_take21(metamacro_tail(__VA_ARGS__))
+#define metamacro_take23(...) metamacro_head(__VA_ARGS__), metamacro_take22(metamacro_tail(__VA_ARGS__))
+#define metamacro_take24(...) metamacro_head(__VA_ARGS__), metamacro_take23(metamacro_tail(__VA_ARGS__))
+#define metamacro_take25(...) metamacro_head(__VA_ARGS__), metamacro_take24(metamacro_tail(__VA_ARGS__))
+#define metamacro_take26(...) metamacro_head(__VA_ARGS__), metamacro_take25(metamacro_tail(__VA_ARGS__))
+#define metamacro_take27(...) metamacro_head(__VA_ARGS__), metamacro_take26(metamacro_tail(__VA_ARGS__))
+#define metamacro_take28(...) metamacro_head(__VA_ARGS__), metamacro_take27(metamacro_tail(__VA_ARGS__))
+#define metamacro_take29(...) metamacro_head(__VA_ARGS__), metamacro_take28(metamacro_tail(__VA_ARGS__))
+#define metamacro_take30(...) metamacro_head(__VA_ARGS__), metamacro_take29(metamacro_tail(__VA_ARGS__))
+#define metamacro_take31(...) metamacro_head(__VA_ARGS__), metamacro_take30(metamacro_tail(__VA_ARGS__))
+#define metamacro_take32(...) metamacro_head(__VA_ARGS__), metamacro_take31(metamacro_tail(__VA_ARGS__))
+#define metamacro_take33(...) metamacro_head(__VA_ARGS__), metamacro_take32(metamacro_tail(__VA_ARGS__))
+#define metamacro_take34(...) metamacro_head(__VA_ARGS__), metamacro_take33(metamacro_tail(__VA_ARGS__))
+#define metamacro_take35(...) metamacro_head(__VA_ARGS__), metamacro_take34(metamacro_tail(__VA_ARGS__))
+#define metamacro_take36(...) metamacro_head(__VA_ARGS__), metamacro_take35(metamacro_tail(__VA_ARGS__))
+#define metamacro_take37(...) metamacro_head(__VA_ARGS__), metamacro_take36(metamacro_tail(__VA_ARGS__))
+#define metamacro_take38(...) metamacro_head(__VA_ARGS__), metamacro_take37(metamacro_tail(__VA_ARGS__))
+#define metamacro_take39(...) metamacro_head(__VA_ARGS__), metamacro_take38(metamacro_tail(__VA_ARGS__))
+#define metamacro_take40(...) metamacro_head(__VA_ARGS__), metamacro_take39(metamacro_tail(__VA_ARGS__))
+#define metamacro_take41(...) metamacro_head(__VA_ARGS__), metamacro_take40(metamacro_tail(__VA_ARGS__))
+#define metamacro_take42(...) metamacro_head(__VA_ARGS__), metamacro_take41(metamacro_tail(__VA_ARGS__))
+#define metamacro_take43(...) metamacro_head(__VA_ARGS__), metamacro_take42(metamacro_tail(__VA_ARGS__))
+#define metamacro_take44(...) metamacro_head(__VA_ARGS__), metamacro_take43(metamacro_tail(__VA_ARGS__))
+#define metamacro_take45(...) metamacro_head(__VA_ARGS__), metamacro_take44(metamacro_tail(__VA_ARGS__))
+#define metamacro_take46(...) metamacro_head(__VA_ARGS__), metamacro_take45(metamacro_tail(__VA_ARGS__))
+#define metamacro_take47(...) metamacro_head(__VA_ARGS__), metamacro_take46(metamacro_tail(__VA_ARGS__))
+#define metamacro_take48(...) metamacro_head(__VA_ARGS__), metamacro_take47(metamacro_tail(__VA_ARGS__))
+#define metamacro_take49(...) metamacro_head(__VA_ARGS__), metamacro_take48(metamacro_tail(__VA_ARGS__))
+#define metamacro_take50(...) metamacro_head(__VA_ARGS__), metamacro_take49(metamacro_tail(__VA_ARGS__))
 
 // metamacro_drop expansions
 #define metamacro_drop0(...) __VA_ARGS__
@@ -1387,5 +1717,35 @@ metamacro_if_eq(0, 1)(true)(false)
 #define metamacro_drop18(...) metamacro_drop17(metamacro_tail(__VA_ARGS__))
 #define metamacro_drop19(...) metamacro_drop18(metamacro_tail(__VA_ARGS__))
 #define metamacro_drop20(...) metamacro_drop19(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop21(...) metamacro_drop20(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop22(...) metamacro_drop21(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop23(...) metamacro_drop22(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop24(...) metamacro_drop23(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop25(...) metamacro_drop24(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop26(...) metamacro_drop25(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop27(...) metamacro_drop26(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop28(...) metamacro_drop27(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop29(...) metamacro_drop28(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop30(...) metamacro_drop29(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop31(...) metamacro_drop30(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop32(...) metamacro_drop31(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop33(...) metamacro_drop32(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop34(...) metamacro_drop33(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop35(...) metamacro_drop34(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop36(...) metamacro_drop35(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop37(...) metamacro_drop36(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop38(...) metamacro_drop37(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop39(...) metamacro_drop38(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop40(...) metamacro_drop39(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop41(...) metamacro_drop40(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop42(...) metamacro_drop41(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop43(...) metamacro_drop42(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop44(...) metamacro_drop43(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop45(...) metamacro_drop44(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop46(...) metamacro_drop45(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop47(...) metamacro_drop46(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop48(...) metamacro_drop47(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop49(...) metamacro_drop48(metamacro_tail(__VA_ARGS__))
+#define metamacro_drop50(...) metamacro_drop49(metamacro_tail(__VA_ARGS__))
 
 #endif
