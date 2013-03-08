@@ -57,6 +57,13 @@
         metamacro_foreach_cxt(metamacro_foreach_iter, SEP, MACRO, __VA_ARGS__)
 
 /**
+ * Identical to #metamacro_foreach, except that a comma separator is used
+ * (since a comma cannot be passed as an argument in a macro).
+ */
+#define metamacro_foreach_list(MACRO, ...) \
+		metamacro_foreach_cxt_list(metamacro_foreach_iter, MACRO, __VA_ARGS__)
+
+/**
  * For each consecutive variadic argument (up to twenty), MACRO is passed the
  * zero-based index of the current argument, CONTEXT, and then the argument
  * itself. The results of adjoining invocations of MACRO are then separated by
@@ -68,11 +75,25 @@
         metamacro_concat(metamacro_foreach_cxt, metamacro_argcount(__VA_ARGS__))(MACRO, SEP, CONTEXT, __VA_ARGS__)
 
 /**
+ * Identical to #metamacro_foreach_cxt, except that a comma separator is used
+ * (since a comma cannot be passed as an argument in a macro).
+ */
+#define metamacro_foreach_cxt_list(MACRO, CONTEXT, ...) \
+		metamacro_concat(metamacro_foreach_cxt_list, metamacro_argcount(__VA_ARGS__))(MACRO, CONTEXT, __VA_ARGS__)
+
+/**
  * Identical to #metamacro_foreach_cxt. This can be used when the former would
  * fail due to recursive macro expansion.
  */
 #define metamacro_foreach_cxt_recursive(MACRO, SEP, CONTEXT, ...) \
         metamacro_concat(metamacro_foreach_cxt_recursive, metamacro_argcount(__VA_ARGS__))(MACRO, SEP, CONTEXT, __VA_ARGS__)
+
+/**
+ * Identical to #metamacro_foreach_cxt_recursive, except that a comma separator is used
+ * (since a comma cannot be passed as an argument in a macro).
+ */
+#define metamacro_foreach_cxt_recursive_list(MACRO, CONTEXT, ...) \
+        metamacro_concat(metamacro_foreach_cxt_recursive_list, metamacro_argcount(__VA_ARGS__))(MACRO, CONTEXT, __VA_ARGS__)
 
 /**
  * In consecutive order, appends each variadic argument (up to twenty) onto
@@ -329,6 +350,86 @@ metamacro_if_eq(0, 1)(true)(false)
     SEP \
     MACRO(19, CONTEXT, _19)
 
+// metamacro_foreach_cxt_list expansions
+#define metamacro_foreach_cxt_list0(MACRO, CONTEXT)
+#define metamacro_foreach_cxt_list1(MACRO, CONTEXT, _0) MACRO(0, CONTEXT, _0)
+
+#define metamacro_foreach_cxt_list2(MACRO, CONTEXT, _0, _1) \
+   metamacro_foreach_cxt_list1(MACRO, CONTEXT, _0), \
+   MACRO(1, CONTEXT, _1)
+
+#define metamacro_foreach_cxt_list3(MACRO, CONTEXT, _0, _1, _2) \
+   metamacro_foreach_cxt_list2(MACRO, CONTEXT, _0, _1), \
+   MACRO(2, CONTEXT, _2)
+
+#define metamacro_foreach_cxt_list4(MACRO, CONTEXT, _0, _1, _2, _3) \
+   metamacro_foreach_cxt_list3(MACRO, CONTEXT, _0, _1, _2), \
+   MACRO(3, CONTEXT, _3)
+
+#define metamacro_foreach_cxt_list5(MACRO, CONTEXT, _0, _1, _2, _3, _4) \
+   metamacro_foreach_cxt_list4(MACRO, CONTEXT, _0, _1, _2, _3), \
+   MACRO(4, CONTEXT, _4)
+
+#define metamacro_foreach_cxt_list6(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5) \
+   metamacro_foreach_cxt_list5(MACRO, CONTEXT, _0, _1, _2, _3, _4), \
+   MACRO(5, CONTEXT, _5)
+
+#define metamacro_foreach_cxt_list7(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6) \
+   metamacro_foreach_cxt_list6(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5), \
+   MACRO(6, CONTEXT, _6)
+
+#define metamacro_foreach_cxt_list8(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7) \
+   metamacro_foreach_cxt_list7(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6), \
+   MACRO(7, CONTEXT, _7)
+
+#define metamacro_foreach_cxt_list9(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8) \
+   metamacro_foreach_cxt_list8(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7), \
+   MACRO(8, CONTEXT, _8)
+
+#define metamacro_foreach_cxt_list10(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9) \
+   metamacro_foreach_cxt_list9(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8), \
+   MACRO(9, CONTEXT, _9)
+
+#define metamacro_foreach_cxt_list11(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10) \
+   metamacro_foreach_cxt_list10(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9), \
+   MACRO(10, CONTEXT, _10)
+
+#define metamacro_foreach_cxt_list12(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11) \
+   metamacro_foreach_cxt_list11(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10), \
+   MACRO(11, CONTEXT, _11)
+
+#define metamacro_foreach_cxt_list13(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12) \
+   metamacro_foreach_cxt_list12(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11), \
+   MACRO(12, CONTEXT, _12)
+
+#define metamacro_foreach_cxt_list14(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13) \
+   metamacro_foreach_cxt_list13(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12), \
+   MACRO(13, CONTEXT, _13)
+
+#define metamacro_foreach_cxt_list15(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14) \
+   metamacro_foreach_cxt_list14(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13), \
+   MACRO(14, CONTEXT, _14)
+
+#define metamacro_foreach_cxt_list16(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15) \
+   metamacro_foreach_cxt_list15(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14), \
+   MACRO(15, CONTEXT, _15)
+
+#define metamacro_foreach_cxt_list17(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16) \
+   metamacro_foreach_cxt_list16(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15), \
+   MACRO(16, CONTEXT, _16)
+
+#define metamacro_foreach_cxt_list18(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17) \
+   metamacro_foreach_cxt_list17(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16), \
+   MACRO(17, CONTEXT, _17)
+
+#define metamacro_foreach_cxt_list19(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18) \
+   metamacro_foreach_cxt_list18(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17), \
+   MACRO(18, CONTEXT, _18)
+
+#define metamacro_foreach_cxt_list20(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19) \
+   metamacro_foreach_cxt_list19(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18), \
+   MACRO(19, CONTEXT, _19)
+
 // metamacro_foreach_cxt_recursive expansions
 #define metamacro_foreach_cxt_recursive0(MACRO, SEP, CONTEXT)
 #define metamacro_foreach_cxt_recursive1(MACRO, SEP, CONTEXT, _0) MACRO(0, CONTEXT, _0)
@@ -426,6 +527,86 @@ metamacro_if_eq(0, 1)(true)(false)
 #define metamacro_foreach_cxt_recursive20(MACRO, SEP, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19) \
     metamacro_foreach_cxt_recursive19(MACRO, SEP, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18) \
     SEP \
+    MACRO(19, CONTEXT, _19)
+																														  
+// metamacro_foreach_cxt_recursive_list expansions
+#define metamacro_foreach_cxt_recursive_list0(MACRO, CONTEXT)
+#define metamacro_foreach_cxt_recursive_list1(MACRO, CONTEXT, _0) MACRO(0, CONTEXT, _0)
+
+#define metamacro_foreach_cxt_recursive_list2(MACRO, CONTEXT, _0, _1) \
+    metamacro_foreach_cxt_recursive_list1(MACRO, CONTEXT, _0), \
+    MACRO(1, CONTEXT, _1)
+
+#define metamacro_foreach_cxt_recursive_list3(MACRO, CONTEXT, _0, _1, _2) \
+    metamacro_foreach_cxt_recursive_list2(MACRO, CONTEXT, _0, _1), \
+    MACRO(2, CONTEXT, _2)
+
+#define metamacro_foreach_cxt_recursive_list4(MACRO, CONTEXT, _0, _1, _2, _3) \
+    metamacro_foreach_cxt_recursive_list3(MACRO, CONTEXT, _0, _1, _2), \
+    MACRO(3, CONTEXT, _3)
+
+#define metamacro_foreach_cxt_recursive_list5(MACRO, CONTEXT, _0, _1, _2, _3, _4) \
+    metamacro_foreach_cxt_recursive_list4(MACRO, CONTEXT, _0, _1, _2, _3), \
+    MACRO(4, CONTEXT, _4)
+
+#define metamacro_foreach_cxt_recursive_list6(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5) \
+    metamacro_foreach_cxt_recursive_list5(MACRO, CONTEXT, _0, _1, _2, _3, _4), \
+    MACRO(5, CONTEXT, _5)
+
+#define metamacro_foreach_cxt_recursive_list7(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6) \
+    metamacro_foreach_cxt_recursive_list6(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5), \
+    MACRO(6, CONTEXT, _6)
+
+#define metamacro_foreach_cxt_recursive_list8(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7) \
+    metamacro_foreach_cxt_recursive_list7(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6), \
+    MACRO(7, CONTEXT, _7)
+
+#define metamacro_foreach_cxt_recursive_list9(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8) \
+    metamacro_foreach_cxt_recursive_list8(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7), \
+    MACRO(8, CONTEXT, _8)
+
+#define metamacro_foreach_cxt_recursive_list10(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9) \
+    metamacro_foreach_cxt_recursive_list9(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8), \
+    MACRO(9, CONTEXT, _9)
+
+#define metamacro_foreach_cxt_recursive_list11(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10) \
+    metamacro_foreach_cxt_recursive_list10(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9), \
+    MACRO(10, CONTEXT, _10)
+
+#define metamacro_foreach_cxt_recursive_list12(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11) \
+    metamacro_foreach_cxt_recursive_list11(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10), \
+    MACRO(11, CONTEXT, _11)
+
+#define metamacro_foreach_cxt_recursive_list13(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12) \
+    metamacro_foreach_cxt_recursive_list12(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11), \
+    MACRO(12, CONTEXT, _12)
+
+#define metamacro_foreach_cxt_recursive_list14(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13) \
+    metamacro_foreach_cxt_recursive_list13(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12), \
+    MACRO(13, CONTEXT, _13)
+
+#define metamacro_foreach_cxt_recursive_list15(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14) \
+    metamacro_foreach_cxt_recursive_list14(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13), \
+    MACRO(14, CONTEXT, _14)
+
+#define metamacro_foreach_cxt_recursive_list16(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15) \
+    metamacro_foreach_cxt_recursive_list15(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14), \
+    MACRO(15, CONTEXT, _15)
+
+#define metamacro_foreach_cxt_recursive_list17(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16) \
+    metamacro_foreach_cxt_recursive_list16(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15), \
+    MACRO(16, CONTEXT, _16)
+
+#define metamacro_foreach_cxt_recursive_list18(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17) \
+    metamacro_foreach_cxt_recursive_list17(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16), \
+    MACRO(17, CONTEXT, _17)
+
+#define metamacro_foreach_cxt_recursive_list19(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18) \
+    metamacro_foreach_cxt_recursive_list18(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17), \
+    MACRO(18, CONTEXT, _18)
+
+#define metamacro_foreach_cxt_recursive_list20(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19) \
+    metamacro_foreach_cxt_recursive_list19(MACRO, CONTEXT, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18), \
     MACRO(19, CONTEXT, _19)
 
 // metamacro_for_cxt expansions
